@@ -1,0 +1,113 @@
+MDScreen:
+    name: "login"
+    MDFloatLayout:
+        md_bg_color: [1,1,1,1]
+        MDIconButton:
+            icon: "arrow-left"
+            pos_hint: {'center_y': 0.97}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "main"
+        Image:
+            source: "4957136.jpg"
+            pos_hint: {'center_x': 0.5,'center_y': 0.66}
+            size_hint: 1,0.4
+        MDLabel:
+            text: "Welcome Back!"
+            font_name: 'BPoppins'
+            font_size: "27sp"
+            pos_hint: {'center_x': 0.575,'center_y': 0.90}
+            color: rgba(0, 0, 59, 255)
+        MDLabel:
+            text: "Login to your existing account        "
+            font_name: 'MPoppins'
+            font_size: "13sp"
+            pos_hint: {'center_x': 0.580, 'center_y': 0.85}
+            color: rgba(135,135,135,255)
+        MDTextFieldRound:
+            hint_text: "Email"
+            icon_left: "account"
+            pos_hint: {'center_x': 0.5,'center_y': 0.48}
+            size_hint: 0.75, 0.06
+            multiline: False
+            normal_color: 1,1,1,1
+            color_active: 1,1,1,1
+            foreground_color: rgba(0, 153, 255, 255)
+        MDTextFieldRound:
+            hint_text: "Password"
+            password: True
+            icon_left: "key-variant"
+            pos_hint: {'center_x': 0.5,'center_y': 0.40}
+            size_hint: 0.75, 0.06
+            multiline: False
+            normal_color: 1,1,1,1
+            color_active: 1,1,1,1
+            foreground_color: rgba(0, 153, 255, 255)
+        Button:
+            text: "Login"
+            size_hint: .66, .065
+            pos_hint: {'center_x': 0.5,'center_y': 0.32}
+            background_color: 0, 0, 0, 0
+            font_name: "BPoppins"
+            on_release: 
+                root.manager.transition.direction = "left"
+                root.manager.current = "home"
+            canvas.before:
+                Color:
+                    rgb: rgba(0, 153, 255, 1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [5]
+        MDTextButton:
+            text: "Forgot Password?"
+            pos_hint: {'center_x': .5,'center_y': 0.26}
+            color: rgba(68, 78, 132,255)
+            font_size: "12sp"
+            font_name: "BPoppins"
+        MDLabel:
+            text: "or"
+            pos_hint: {'center_y': 0.21}
+            halign: "center"
+            font_size: "13sp"
+            font_name: "BPoppins"
+        MDFloatLayout:
+            md_bg_color: rgba(178,178,178,255)
+            size_hint: 0.38, 0.002
+            pos_hint: {'center_x': 0.25,'center_y': 0.208}
+        MDFloatLayout:
+            md_bg_color: rgba(178,178,178,255)
+            size_hint: 0.38, 0.002
+            pos_hint: {'center_x': 0.76,'center_y': 0.208}
+        MDLabel:
+            text: "Social Media Login"
+            font_name: "BPoppins"
+            font_size: "13sp"
+            halign: 'center'
+            pos_hint: {'center_x': 0.5, 'center_y':0.16}
+            color: rgba(135, 133, 193, 255)
+        MDGridLayout:
+            cols: 3
+            size_hint: 0.48, 0.07
+            pos_hint: {'center_x': 0.5,'center_y': 0.10}
+            Image:
+                source: "icons8-google-48.png"
+            Image:
+                source: "icons8-facebook-48.png"
+            Image:
+                source: "icons8-twitter-48.png"
+        MDLabel:
+            text: "Don't have an account?"
+            font_name: 'BPoppins'
+            font_size: '11sp'
+            pos_hint: {'center_x': .68,'center_y': 0.04}
+            color: rgba(135, 133, 193, 255)
+        MDTextButton:
+            text: "Sign up"
+            font_name: 'BPoppins'
+            font_size: '13sp'
+            pos_hint: {'center_x': .75,'center_y': 0.04}
+            color: rgba(0, 0, 59, 255)
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "signup"

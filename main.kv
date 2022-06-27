@@ -1,0 +1,69 @@
+Screen:
+    name: 'main'
+    MDFloatLayout:
+        md_bg_color: [1,1,1,1]
+        Image:
+            source: "home_assistant_icon_146164.png"
+            size_hint: 0.2, 0.2
+            pos_hint: {"x": 0.4, "y": 0.83}
+        Image:
+            source: "2953982.jpg"
+            pos_hint: {'center_x': 0.5,'center_y': 0.57}
+        MDLabel:
+            text: " Home Assistant"
+            font_name: 'BPoppins'
+            font_size: "30sp"
+            pos_hint: {'center_y': 0.83}
+            halign: 'center'
+            color: rgba(34,34,34,255)
+        MDLabel:
+            text: "Welcome"
+            font_name: 'BPoppins'
+            font_size: "25sp"
+            pos_hint: {'center_y': 0.34}
+            halign: 'center'
+            color: rgba(34,34,34,255)
+        MDLabel:
+            text: " Please login or sign up to continue                 using our app"
+            font_name: 'MPoppins'
+            font_size: "13sp"
+            pos_hint: {'center_y': 0.27}
+            halign: 'center'
+            color: rgba(127,127,127,255)
+        Button:
+            text: "Login"
+            size_hint: .66, .065
+            pos_hint: {'center_x': 0.5,'center_y': 0.18}
+            background_color: 0, 0, 0, 0
+            font_name: "BPoppins"
+            on_release: 
+                root.manager.transition.direction = "left"
+                root.manager.current = "login"
+            canvas.before:
+                Color:
+                    rgb: rgba(0, 153, 255, 1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [5]
+        Button:
+            text: "SIGNUP"
+            size_hint: .66, .065
+            pos_hint: {'center_x': 0.5,'center_y': 0.09}
+            background_color: 0, 0, 0, 0
+            font_name: "BPoppins"
+            color: rgba(0, 153, 255, 255)
+            on_release: 
+                root.manager.transition.direction = "left"
+                root.manager.current = "signup"
+            canvas.before:
+                Color:
+                    rgb: rgba(0, 153, 255, 255)
+                Line:
+                    width: 1.2
+                    rounded_rectangle: self.x, self.y, self.width, self.height, 5, 5, 5, 5, 100
+
+
+        
+
+    
